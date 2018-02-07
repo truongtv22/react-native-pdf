@@ -31,6 +31,6 @@
     },
     "peerDependencies": {
         "react-native-fetch-blob": "^0.10.8",
-        "react-native-pdf-view": "0.3.2"
+        "react-native-pdf-view": "github:cnjon/react-native-pdf-view"
     }
 }
