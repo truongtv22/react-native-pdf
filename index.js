@@ -24,7 +24,7 @@ import PDFView from 'react-native-pdf-view';
 
 const SHA1 = require('crypto-js/sha1');
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
-import PdfView from './PdfView';
+// import PdfView from './PdfView';
 
 export default class Pdf extends Component {
 
@@ -343,19 +343,20 @@ export default class Pdf extends Component {
                 return (
                     <PDFView
                         ref={(pdf)=>{this.pdfView = pdf;}}
-                         src={this.state.path}
-                         onLoadComplete = {(pageCount)=>{
+                        src={this.state.path}
+                        pageNumber={this.props.page}
+                        onLoadComplete = {(pageCount)=>{
                             console.log('pageCount: ', pageCount);
-                         }}
-                         style={{flex: 1}}
+                        }}
+                        style={{flex: 1}}
                     />
-//                     <PdfCustom
-//                         ref={component => (this._root = component)}
-//                         {...this.props}
-//                         style={[{ backgroundColor: '#EEE' }, this.props.style]}
-//                         path={this.state.path}
-//                         onChange={this._onChange}
-//                     />
+                    // <PdfCustom
+                    //     ref={component => (this._root = component)}
+                    //     {...this.props}
+                    //     style={[{ backgroundColor: '#EEE' }, this.props.style]}
+                    //     path={this.state.path}
+                    //     onChange={this._onChange}
+                    // />
                 );
             } else if (Platform.OS === "ios") {
                 return (
